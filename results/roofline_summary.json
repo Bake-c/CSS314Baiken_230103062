@@ -1,0 +1,114 @@
+{
+  "stencil": "5-point average",
+  "arithmetic_intensity": 0.10416666666666667,
+  "arithmetic_intensity_flops_per_byte": 0.10416666666666667,
+  "estimated_flops_per_cell": 5,
+  "conservative_bytes_per_cell": 48,
+  "estimation_caveat": "48-byte algorithmic traffic model excludes cache reuse, write allocation and NumPy temporary arrays. Classification describes this estimated Roofline; process/IPC overhead can dominate measured runtime.",
+  "host_cache": {
+    "L1_cache": "32K, 48K",
+    "L2_cache": "1280K, 2048K",
+    "L3_cache": "12288K",
+    "cache_line_bytes": 64,
+    "instances": [
+      {
+        "level": 1,
+        "size_bytes": 49152,
+        "line_bytes": 64
+      },
+      {
+        "level": 2,
+        "size_bytes": 1310720,
+        "line_bytes": 64
+      },
+      {
+        "level": 3,
+        "size_bytes": 12582912,
+        "line_bytes": 64
+      },
+      {
+        "level": 1,
+        "size_bytes": 49152,
+        "line_bytes": 64
+      },
+      {
+        "level": 2,
+        "size_bytes": 1310720,
+        "line_bytes": 64
+      },
+      {
+        "level": 1,
+        "size_bytes": 49152,
+        "line_bytes": 64
+      },
+      {
+        "level": 2,
+        "size_bytes": 1310720,
+        "line_bytes": 64
+      },
+      {
+        "level": 1,
+        "size_bytes": 49152,
+        "line_bytes": 64
+      },
+      {
+        "level": 2,
+        "size_bytes": 1310720,
+        "line_bytes": 64
+      },
+      {
+        "level": 1,
+        "size_bytes": 32768,
+        "line_bytes": 64
+      },
+      {
+        "level": 2,
+        "size_bytes": 2097152,
+        "line_bytes": 64
+      },
+      {
+        "level": 1,
+        "size_bytes": 32768,
+        "line_bytes": 64
+      },
+      {
+        "level": 1,
+        "size_bytes": 32768,
+        "line_bytes": 64
+      },
+      {
+        "level": 1,
+        "size_bytes": 32768,
+        "line_bytes": 64
+      }
+    ],
+    "size_scope": "Per cache instance; heterogeneous sizes are listed separately"
+  },
+  "bandwidth_gbps_input": 27.94368862100913,
+  "peak_gflops_input": 155.85502313819265,
+  "bandwidth_source": "measured NumPy copy throughput",
+  "compute_source": "measured NumPy GEMM throughput",
+  "measurements": {
+    "bandwidth_method": "Median of 5 np.copyto runs after 2 warmups, 128 MiB source; bytes=read+write",
+    "compute_method": "Median of 5 float64 NumPy GEMM runs after 2 warmups; 768x768; FLOPs=2*N^3",
+    "copy_samples_ns": [
+      9610900,
+      9130300,
+      10086200,
+      9302900,
+      9606300
+    ],
+    "gemm_samples_ns": [
+      5725100,
+      5767700,
+      6279200,
+      6238900,
+      5812900
+    ],
+    "caveat": "Empirical library ceilings, not theoretical hardware peaks. Copy ignores write-allocate traffic; GEMM uses the installed BLAS thread configuration."
+  },
+  "memory_roof_gflops": 2.9108008980217845,
+  "attainable_gflops": 2.9108008980217845,
+  "regime": "memory-bound",
+  "classification": "memory-bound"
+}

@@ -1,0 +1,13 @@
+{
+  "student_id": "30103062",
+  "N": 1344,
+  "M": 672,
+  "note": "NumPy inner reductions/row operations implement logical i-j-k and i-k-j traversal; not pure-scalar loops",
+  "naive_median_ns": 1743219900,
+  "interchanged_median_ns": 743767600,
+  "naive_time_s": 1.7432199,
+  "interchanged_time_s": 0.7437676,
+  "speedup": 2.343769612981259,
+  "max_absolute_error": 7.389644451905042e-13,
+  "matches_tolerance_1e_12": true
+}
